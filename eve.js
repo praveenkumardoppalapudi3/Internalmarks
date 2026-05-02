@@ -44,10 +44,11 @@ function marks() {
         grandTotal += labMarks;
     }
 
-    // Show result table and update grand total
-    const resultTable = document.getElementById("tbl2");
-    resultTable.hidden = false;
+    // Show result area and update grand total
+    const resultArea = document.getElementById("results-area");
+    resultArea.hidden = false;
     document.getElementById("final").innerHTML = grandTotal;
+    document.getElementById("summary-total").innerHTML = grandTotal;
 }
 
 function resetForm() {
@@ -57,15 +58,15 @@ function resetForm() {
     const selects = document.querySelectorAll('select');
     selects.forEach(select => select.selectedIndex = 0);
 
-    document.getElementById("tbl2").hidden = true;
+    document.getElementById("results-area").hidden = true;
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 // Optional: Add real-time calculation
 document.querySelectorAll('input, select').forEach(element => {
     element.addEventListener('input', () => {
-        // Only auto-calculate if the results table is already visible
-        if (!document.getElementById("tbl2").hidden) {
+        // Only auto-calculate if the results area is already visible
+        if (!document.getElementById("results-area").hidden) {
             marks();
         }
     });

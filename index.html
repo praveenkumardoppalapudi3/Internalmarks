@@ -135,8 +135,16 @@
             <button class="btn btn-secondary" onclick="resetForm()">Clear All</button>
         </div>
 
-        <div class="tbl-container">
-            <table hidden id="tbl2" class="tbl">
+        <div id="results-area" hidden>
+            <div class="summary-card">
+                <h5>Overall Internal Marks</h5>
+                <div class="score"><span id="summary-total">0</span></div>
+                <span class="badge badge-success">Calculated Successfully</span>
+            </div>
+
+            <div class="tbl-container">
+                <table id="tbl2" class="tbl">
+
                 <thead>
                     <tr>
                         <th>Results Summary</th>
