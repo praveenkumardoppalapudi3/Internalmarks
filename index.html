@@ -1,184 +1,214 @@
 <!DOCTYPE html>
-<html>
-<head></head>
-<body class="bg">
-	 <center>
-	<link rel="stylesheet" href="st.css" type="text/css" />
-	<h4 class="middle">Enter your Marks Below</h4>
-	<h4 class="co">Note:First please enter all the marks Then only click Get Marks Button.</h4>
-	<table border="1px" cellpadding="10px" class="tbl">
-		<tr>
-			<th>Subjects</th>
-			<th>AAT1</th>
-			<th>MID1</th>
-			<th>AAT2</th>
-			<th>MID2</th>
-			<th>Attendence</th>
-		</tr>
-		<tr>
-			<td>sub1</td>
-			<td><input type="text" id="txtsub1aat1" size="10" /></td>
-			<td><input type="text" id="txtsub1mid1" size="10" /></td>
-			<td><input type="text" id="txtsub1aat2" size="10" /></td>
-			<td><input type="text" id="txtsub1mid2" size="10" /></td>
-			<td><select id="sel1">
-				<option value="5" text="5">5</option>
-				<option value="3" text="3">3</option>
-				<option value="2" text="2">2</option>
-				<option value="1" text="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>sub2</td>
-			<td><input type="text" id="txtsub2aat1" size="10" /></td>
-			<td><input type="text" id="txtsub2mid1" size="10" /></td>
-			<td><input type="text" id="txtsub2aat2" size="10" /></td>
-			<td><input type="text" id="txtsub2mid2" size="10" /></td>
-			<td><select id="sel2">
-				<option value="5">5</option>
-				<option value="3">3</option>
-				<option value="2">2</option>
-				<option value="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>sub3</td>
-			<td><input type="text" id="txtsub3aat1" size="10" /></td>
-			<td><input type="text" id="txtsub3mid1" size="10" /></td>
-			<td><input type="text" id="txtsub3aat2" size="10" /></td>
-			<td><input type="text" id="txtsub3mid2" size="10" /></td>
-			<td><select id="sel3">
-				<option value="5">5</option>
-				<option value="3">3</option>
-				<option value="2">2</option>
-				<option value="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>sub4</td>
-			<td><input type="text" id="txtsub4aat1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub4mid1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub4aat2" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub4mid2" size="10" maxlength="3"/></td>
-			<td><select id="sel4">
-				<option value="5">5</option>
-				<option value="3">3</option>
-				<option value="2">2</option>
-				<option value="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>sub5</td>
-			<td><input type="text" id="txtsub5aat1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub5mid1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub5aat2" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub5mid2" size="10" maxlength="3"/></td>
-			<td><select id="sel5">
-				<option value="5">5</option>
-				<option value="3">3</option>
-				<option value="2">2</option>
-				<option value="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td>sub6</td>
-			<td><input type="text" id="txtsub6aat1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub6mid1" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub6aat2" size="10" maxlength="3"/></td>
-			<td><input type="text" id="txtsub6mid2" size="10" maxlength="3"/></td>
-			<td><select id="sel6">
-				<option value="5">5</option>
-				<option value="3">3</option>
-				<option value="2">2</option>
-				<option value="1">1</option>
-			</select></td>
-		</tr>
-		<tr>
-			<td colspan="3">Lab1</td>
-			<td colspan="3" align="center"><input type="text" id="l1" maxlength="2"/></td>
-		</tr>
-		<tr>
-			<td colspan="3">Lab2</td>
-			<td colspan="3" align="center"><input type="text" id="l2" maxlength="2"></td>
-		</tr>
-		<tr>
-			<td colspan="3">Lab3</td>
-			<td colspan="3" align="center"><input type="text" id="l3" maxlength="2"/></td>
-		</tr>
-		<tr>
-			<td colspan="6" align="center"><input type="Submit" value="Get Marks" onclick="marks()"/></td>
-		</tr>
-	</table><p>
-	
-	<script type="text/javascript" src="eve.js"></script> 
-	
-	<table border="1px" hidden="true" id="tbl2" cellpadding="10px" class="tbl">
-		<tr>
-			<th>Subjects</th>
-			<th>AAT</th>
-			<th>MID</th>
-			<th>Attendence</th>
-			<th>Total</th>
-		</tr>
-		<tr>
-			<td>Sub1</td>
-			<td><p id="pat1" value="0">0</p></td>
-			<td><p id="pm1">0</p></td>
-			<td><p id="pa1">0</p></td>
-			<td><p id="t1">0</p></td>
-		</tr>
-		<tr>
-			<td>Sub2</td>
-			<td><p id="pat2"></p></td>
-			<td><p id="pm2"></p></td>
-			<td><p id="pa2"></p></td>
-			<td><p id="t2"></p></td>
-		</tr>
-		<tr>
-			<td>Sub3</td>
-			<td><p id="pat3"></p></td>
-			<td><p id="pm3"></p></td>
-			<td><p id="pa3"></p></td>
-			<td><p id="t3"></p></td>
-		</tr>
-		<tr>
-			<td>Sub4</td>
-			<td><p id="pat4"></p></td>
-			<td><p id="pm4"></p></td>
-			<td><p id="pa4"></p></td>
-			<td><p id="t4"></p></td>
-		</tr>
-		<tr>
-			<td>Sub5</td>
-			<td><p id="pat5"></p></td>
-			<td><p id="pm5"></p></td>
-			<td><p id="pa5"></p></td>
-			<td><p id="t5"></p></td>
-		</tr>
-		<tr>
-			<td>Sub6</td>
-			<td><p id="pat6"></p></td>
-			<td><p id="pm6"></p></td>
-			<td><p id="pa6"></p></td>
-			<td><p id="t6"></p></td>
-		</tr>
-		
-		<tr>
-			<td colspan="4">Lab1</td>
-			<td  align="center"><p id="la1"></p></td>
-		</tr>
-		<tr>
-			<td colspan="4">Lab2</td>
-			<td  align="center"><p id="la2"></p></td>
-		</tr>
-		<tr>
-			<td colspan="4">Lab3</td>
-			<td  align="center"><p id="la3"></p></td>
-		</tr>
-		<tr>
-			<td colspan="4">Total</td>
-			<td><p id="final"></p></td>
-		</tr>
-	</table><p>
-	</center>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Internal Marks Calculator</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <div class="container">
+        <h4 class="middle">Internal Marks Calculator</h4>
+        <h4 class="co">Note: Please enter all marks before clicking the "Get Marks" button.</h4>
+        
+        <div class="tbl-container">
+            <table border="1" class="tbl">
+                <thead>
+                    <tr>
+                        <th>Subjects</th>
+                        <th>AAT1</th>
+                        <th>MID1</th>
+                        <th>AAT2</th>
+                        <th>MID2</th>
+                        <th>Attendance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Subject 1</td>
+                        <td><input type="text" id="txtsub1aat1" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub1mid1" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub1aat2" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub1mid2" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel1">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subject 2</td>
+                        <td><input type="text" id="txtsub2aat1" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub2mid1" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub2aat2" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub2mid2" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel2">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subject 3</td>
+                        <td><input type="text" id="txtsub3aat1" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub3mid1" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub3aat2" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub3mid2" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel3">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subject 4</td>
+                        <td><input type="text" id="txtsub4aat1" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub4mid1" maxlength="3" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub4aat2" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub4mid2" maxlength="3" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel4">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subject 5</td>
+                        <td><input type="text" id="txtsub5aat1" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub5mid1" maxlength="3" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub5aat2" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub5mid2" maxlength="3" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel5">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Subject 6</td>
+                        <td><input type="text" id="txtsub6aat1" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub6mid1" maxlength="3" placeholder="Max 30"></td>
+                        <td><input type="text" id="txtsub6aat2" maxlength="3" placeholder="Max 10"></td>
+                        <td><input type="text" id="txtsub6mid2" maxlength="3" placeholder="Max 30"></td>
+                        <td>
+                            <select id="sel6">
+                                <option value="5">5</option>
+                                <option value="3">3</option>
+                                <option value="2">2</option>
+                                <option value="1">1</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Lab 1</td>
+                        <td colspan="3"><input type="text" id="l1" maxlength="2" placeholder="Marks"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Lab 2</td>
+                        <td colspan="3"><input type="text" id="l2" maxlength="2" placeholder="Marks"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Lab 3</td>
+                        <td colspan="3"><input type="text" id="l3" maxlength="2" placeholder="Marks"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="6">
+                            <input type="Submit" value="Calculate Marks" onclick="marks()">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tbl-container">
+            <table border="1" hidden id="tbl2" class="tbl">
+                <thead>
+                    <tr>
+                        <th>Subjects</th>
+                        <th>AAT (Avg)</th>
+                        <th>MID (Weighted)</th>
+                        <th>Attendance</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Subject 1</td>
+                        <td><p id="pat1">0</p></td>
+                        <td><p id="pm1">0</p></td>
+                        <td><p id="pa1">0</p></td>
+                        <td><p id="t1">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>Subject 2</td>
+                        <td><p id="pat2">0</p></td>
+                        <td><p id="pm2">0</p></td>
+                        <td><p id="pa2">0</p></td>
+                        <td><p id="t2">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>Subject 3</td>
+                        <td><p id="pat3">0</p></td>
+                        <td><p id="pm3">0</p></td>
+                        <td><p id="pa3">0</p></td>
+                        <td><p id="t3">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>Subject 4</td>
+                        <td><p id="pat4">0</p></td>
+                        <td><p id="pm4">0</p></td>
+                        <td><p id="pa4">0</p></td>
+                        <td><p id="t4">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>Subject 5</td>
+                        <td><p id="pat5">0</p></td>
+                        <td><p id="pm5">0</p></td>
+                        <td><p id="pa5">0</p></td>
+                        <td><p id="t5">0</p></td>
+                    </tr>
+                    <tr>
+                        <td>Subject 6</td>
+                        <td><p id="pat6">0</p></td>
+                        <td><p id="pm6">0</p></td>
+                        <td><p id="pa6">0</p></td>
+                        <td><p id="t6">0</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Lab 1</td>
+                        <td><p id="la1">0</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Lab 2</td>
+                        <td><p id="la2">0</p></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">Lab 3</td>
+                        <td><p id="la3">0</p></td>
+                    </tr>
+                    <tr style="background-color: #eee; font-weight: bold;">
+                        <td colspan="4">Grand Total</td>
+                        <td><p id="final">0</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="eve.js"></script>
 </body>
+</html>
