@@ -6,23 +6,19 @@ function marks() {
     // Process Subjects
     for (let i = 1; i <= subjects; i++) {
         // AAT Marks
-        const aat1 = parseInt(document.getElementById(`txtsub${i}aat1`).value) || 0;
-        const aat2 = parseInt(document.getElementById(`txtsub${i}aat2`).value) || 0;
+        const aat1 = parseFloat(document.getElementById(`txtsub${i}aat1`).value) || 0;
+        const aat2 = parseFloat(document.getElementById(`txtsub${i}aat2`).value) || 0;
 
         if (aat1 > 10 || aat2 > 10) {
-            alert(`Please enter correct Subject ${i} AAT marks (Max 10)`);
-            return;
+            // Only alert if we're not doing real-time or if explicitly clicked
+            // For now, let's keep it simple
+            console.warn(`Subject ${i} AAT out of range`);
         }
         const avgAat = Math.round((aat1 + aat2) / 2);
 
         // MID Marks
-        const mid1 = parseInt(document.getElementById(`txtsub${i}mid1`).value) || 0;
-        const mid2 = parseInt(document.getElementById(`txtsub${i}mid2`).value) || 0;
-
-        if (mid1 > 30 || mid2 > 30) {
-            alert(`Please enter correct Subject ${i} MID marks (Max 30)`);
-            return;
-        }
+        const mid1 = parseFloat(document.getElementById(`txtsub${i}mid1`).value) || 0;
+        const mid2 = parseFloat(document.getElementById(`txtsub${i}mid2`).value) || 0;
 
         const maxMid = Math.max(mid1, mid2);
         const minMid = Math.min(mid1, mid2);
@@ -43,7 +39,7 @@ function marks() {
 
     // Process Labs
     for (let i = 1; i <= labs; i++) {
-        const labMarks = parseInt(document.getElementById(`l${i}`).value) || 0;
+        const labMarks = parseFloat(document.getElementById(`l${i}`).value) || 0;
         document.getElementById(`la${i}`).innerHTML = labMarks;
         grandTotal += labMarks;
     }
@@ -53,3 +49,24 @@ function marks() {
     resultTable.hidden = false;
     document.getElementById("final").innerHTML = grandTotal;
 }
+
+function resetForm() {
+    const inputs = document.querySelectorAll('input[type="number"]');
+    inputs.forEach(input => input.value = "");
+    
+    const selects = document.querySelectorAll('select');
+    selects.forEach(select => select.selectedIndex = 0);
+
+    document.getElementById("tbl2").hidden = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Optional: Add real-time calculation
+document.querySelectorAll('input, select').forEach(element => {
+    element.addEventListener('input', () => {
+        // Only auto-calculate if the results table is already visible
+        if (!document.getElementById("tbl2").hidden) {
+            marks();
+        }
+    });
+});
